@@ -1,5 +1,5 @@
 import json
-import connection
+import db_connection
 from datetime import datetime
 from mongoengine import DoesNotExist, MultipleObjectsReturned
 from models import Author, Quote

@@ -1,5 +1,5 @@
-import configparser
 from mongoengine import connect
+import configparser
 
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -10,6 +10,7 @@ db_name = config.get('DB', 'db_name')
 domain = config.get('DB', 'domain')
 
 connect(
+    db=db_name,
     host=f"mongodb+srv://{mongo_user}:{mongodb_pass}@{domain}/{db_name}?retryWrites=true&w=majority",
     alias='default',
     ssl=True
